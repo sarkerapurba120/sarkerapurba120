@@ -1,44 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <mata charset="UTF-8">
-            <mata name="viewport"content="device-width;initial-scale=1.0">
-                <title>Ap-HP-CSS-26</title>
-                <link rel="stylesheet"href="style.css">
-            </mata>
-        </head>
-        <body>
-            <div class="Apurba sarker image">
-            <div class="image">
-                <img src="1.png"alt="Apurba sarker">
-                <h1>Apurba sarker<samp>Image</samp></h1>
-            </div>/.image
-        </div>/.flexbox
+    <style>
+        body {
+    background:url(https://static.vecteezy.com/system/browse_category/image/43/small_Coffee_cb1.jpg)no-repeat center center/cover;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
 
+.chat-container {
+    width: 300px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
 
-        <p>Do not for gating My salf <br></br>
-            <mark>Sunday</mark>
-            
-             Day in <iframe src="" frameborder="0"></iframe></p><br>
+.chat-box {
+    height: 200px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+}
 
-             <p>Toke to sheyaring in My salf And by yo data </p>
-        <body>
-            <html>
-            Apurba sarker 
-            </html>
-        </body>
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
 
-<P>
-    My salf <br>
-
-    My name is Apurba Sarker. I am a kind and hardworking person. 
-    I live in Bilmaria-1216,Lalpur,Natore. I enjoy reading books, 
-    playing games, and learning new things.
-     My favorite subjects are English and Science. In my free time, 
-     I like to draw and spend time with my friends.
-      I dream of becoming a CSE engineer etc.
-     in the future. I always try to stay positive and help others.
-</P>
-
-        </body>
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chat Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box">
+            <p class="message">Welcome to the chat!</p>
+        </div>
+        <input type="text" id="user-input" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
