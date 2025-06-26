@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Medical Technology Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="mobile-container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <span>9:41</span>
+            <div class="status-icons">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+        
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1>AMTS</h1>
+                <p>Advanced Medical Technology Solutions</p>
+            </div>
+            <div class="user-profile">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </header>
+        
+        <!-- Navigation Tabs -->
+        <nav class="app-tabs">
+            <div class="tab active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </div>
+            <div class="tab">
+                <i class="fas fa-heartbeat"></i>
+                <span>Health</span>
+            </div>
+            <div class="tab">
+                <i class="fas fa-chart-line"></i>
+                <span>Analytics</span>
+            </div>
+            <div class="tab">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </div>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="app-content">
+            <div class="welcome-section">
+                <h2>Welcome, Doctor</h2>
+                <p>Access patient data and medical analytics</p>
+            </div>
+            
+            <div class="quick-actions">
+                <div class="action-card">
+                    <i class="fas fa-user-md"></i>
+                    <span>Patients</span>
+                </div>
+                <div class="action-card">
+                    <i class="fas fa-prescription-bottle-alt"></i>
+                    <span>Prescriptions</span>
+                </div>
+                <div class="action-card">
+                    <i class="fas fa-notes-medical"></i>
+                    <span>Reports</span>
+                </div>
+                <div class="action-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Appointments</span>
+                </div>
+            </div>
+            
+            <div class="patient-stats">
+                <h3>Recent Patient Stats</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h4>125</h4>
+                        <p>Today</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>892</h4>
+                        <p>This Week</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>3,245</h4>
+                        <p>This Month</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alerts-section">
+                <h3>Critical Alerts</h3>
+                <div class="alert-card critical">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div class="alert-content">
+                        <h4>Patient #4521</h4>
+                        <p>Abnormal ECG detected</p>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="alert-card warning">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <div class="alert-content">
+                        <h4>Patient #7823</h4>
+                        <p>Medication overdue</p>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
+<style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.mobile-container {
+    width: 375px;
+    height: 667px;
+    background-color: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Status Bar */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+.status-icons {
+    display: flex;
+    gap: 8px;
+}
+
+/* Header */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    color: white;
+}
+
+.header-content h1 {
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+.header-content p {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.user-profile i {
+    font-size: 32px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Navigation Tabs */
+.app-tabs {
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+    background-color: white;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    color: #888;
+    cursor: pointer;
+}
+
+.tab i {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.tab.active {
+    color: #4b6cb7;
+}
+
+/* Main Content */
+.app-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.welcome-section {
+    margin-bottom: 20px;
+}
+
+.welcome-section h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.welcome-section p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Quick Actions */
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.action-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.action-card:hover {
+    transform: translateY(-3px);
+}
+
+.action-card i {
+    font-size: 24px;
+    color: #4b6cb7;
+    margin-bottom: 8px;
+}
+
+.action-card span {
+    font-size: 12px;
+    color: #555;
+}
+
+/* Patient Stats */
+.patient-stats {
+    margin-bottom: 25px;
+}
+
+.patient-stats h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.stat-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card h4 {
+    font-size: 20px;
+    color: #4b6cb7;
+    margin-bottom: 5px;
+}
+
+.stat-card p {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Alerts Section */
+.alerts-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.alert-card {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.alert-card i:first-child {
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+.alert-card i:last-child {
+    margin-left: auto;
+    color: #999;
+}
+
+.alert-content h4 {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.alert-content p {
+    font-size: 13px;
+    color: #666;
+}
+
+.alert-card.critical i:first-child {
+    color: #e74c3c;
+}
+
+.alert-card.warning i:first-child {
+    color: #f39c12;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 400px) {
+    .mobile-container {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+}
+</style>  <br> <br>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <title> AMTS Button </title>
+    <style>
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 30px;
+            background: #f5f7fa;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 20px auto;
+            justify-content: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+            border: none;
+            min-width: 180px;
+        }
+        
+        /* Blue Button */
+        .btn-primary {
+            background: #4361ee;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #3a56e0;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Green Button */
+        .btn-success {
+            background: #06d6a0;
+            color: #1e3a8a;
+        }
+        
+        .btn-success:hover {
+            background: #05c293;
+            transform: translateY(-2px);
+        }
+        
+        /* Orange Button */
+        .btn-warning {
+            background: #ff9e00;
+            color: #1e3a8a;
+        }
+        
+        .btn-warning:hover {
+            background: #e68e00;
+            transform: translateY(-2px);
+        }
+        
+        /* Red Button with dual text */
+        .btn-danger {
+            background: #ef476f;
+            color: white;
+            padding: 12px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .btn-danger:hover {
+            background: #e33662;
+            transform: translateY(-2px);
+        }
+        
+        .main-text {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.3;
+        }
+        
+        .sub-text {
+            font-weight: 400;
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <!-- Button 1 -->
+        <a href="#" class="btn btn-primary">Click Here</a>
+        
+        <!-- Button 2 -->
+        <a href="#" class="btn btn-success">Go to Example</a>
+        
+        <!-- Button 3 -->
+        <a href="#" class="btn btn-warning">Visit Example</a>
+        
+        <!-- Button 4 (with dual text) -->
+        <a href="#" class="btn btn-danger">
+            <span class="main-text">Activate Windows</span>
+            <span class="sub-text">Go to Settings to activate Win</span>
+        </a>
+    </div>
+</body>
+</html>

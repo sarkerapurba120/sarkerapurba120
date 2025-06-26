@@ -1,0 +1,589 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="logo">
+                    <div class="premium-photo">
+                        <img src="c:\Users\User\Pictures\Screenshots\Screenshot (175).png">
+                    </div>
+    <title>Bangladesh University - Administration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #0c2c5e, #1a4a8d);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo img {
+            height: 60px;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .logo p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .search-bar {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .search-bar input {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            width: 250px;
+        }
+        
+        .search-bar button {
+            background: #e67e22;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .search-bar button:hover {
+            background: #d35400;
+        }
+        
+        /* Main Navigation */
+        .main-nav {
+            background: #1a4a8d;
+            padding: 0;
+            margin-top: 10px;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: space-between;
+        }
+        
+        .main-nav li {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .main-nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 12px 10px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background 0.3s;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .main-nav li:last-child a {
+            border-right: none;
+        }
+        
+        .main-nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .main-nav a.active {
+            background: #e67e22;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1686&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 20px;
+        }
+        
+        .hero-content h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn:hover {
+            background: #d35400;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Secondary Navigation */
+        .secondary-nav {
+            background: #f1f1f1;
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .secondary-nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .secondary-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .secondary-nav a {
+            color: #1a4a8d;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .secondary-nav a:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: #e67e22;
+            transition: width 0.3s;
+        }
+        
+        .secondary-nav a:hover:after,
+        .secondary-nav a.active:after {
+            width: 100%;
+        }
+        
+        /* Content Section */
+        .content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 30px;
+        }
+        
+        .main-content {
+            flex: 3;
+        }
+        
+        .sidebar {
+            flex: 1;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .card h3 {
+            color: #1a4a8d;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e67e22;
+        }
+        
+        .news-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        
+        .news-item h4 {
+            color: #1a4a8d;
+            margin-bottom: 5px;
+        }
+        
+        .news-date {
+            color: #e67e22;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .quick-links li {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+        
+        .quick-links a {
+            color: #1a4a8d;
+            text-decoration: none;
+            display: block;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            transition: color 0.3s;
+        }
+        
+        .quick-links a:hover {
+            color: #e67e22;
+        }
+        
+        .quick-links i {
+            margin-right: 10px;
+            color: #e67e22;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0c2c5e;
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e67e22;
+        }
+        
+        .footer-links li {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #e67e22;
+        }
+        
+        .contact-info li {
+            list-style: none;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .contact-info i {
+            color: #e67e22;
+            margin-top: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            .main-nav ul {
+                flex-wrap: wrap;
+            }
+            
+            .main-nav li {
+                flex: 1 0 25%;
+            }
+            
+            .search-bar input {
+                width: 150px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .logo {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .main-nav li {
+                flex: 1 0 50%;
+            }
+            
+            .hero-content h2 {
+                font-size: 32px;
+            }
+            
+            .secondary-nav ul {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="top-bar">
+            <div class="logo">
+                <img src="data:image/jpeg;base64,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" alt="BanglaDesh University Logo">
+                <div class="logo-text">
+                    <h1>BanglaDesh University</h1>
+                    <p>Excellence in Higher education since 2025</p>
+                </div>
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="nav-container">
+                <ul>
+                    <li><a href="#" class="active">HOME</a></li>
+                    <li><a href="#">GOVERNANCE</a></li>
+                    <li><a href="#">ADMINISTRATION</a></li>
+                    <li><a href="#">ACADEMIC</a></li>
+                    <li><a href="#">FACILITIES</a></li>
+                    <li><a href="#">ADMISSION</a></li>
+                    <li><a href="#">PUBLICATIONS</a></li>
+                    <li><a href="#">ONLINE SERVICES</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-image">
+            <div class="hero-content">
+                <h2>Bangladesh University Administration Building</h2>
+                <p>The Administrative Heart of One Of Bangladesh's Premier Educational Institutions</p>
+                <a href="#" class="btn">READ MORE</a>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br><br>
+    <!-- Secondary Navigation -->
+    <nav class="secondary-nav">
+        <div class="secondary-nav-container">
+            <ul>
+                <li><a href="#" class="active">HOME</a></li>
+                <li><a href="#">HISTORY OF ICT CENTER</a></li>
+                <li><a href="#">PROJECTS UNDER DEVELOPMENT</a></li>
+                <li><a href="#">SERVICES OFFERED</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="content">
+        <main class="main-content">
+            <div class="card">
+                <h3>About the Administration Building</h3>
+                <p>The Bangladesh University Administration Building serves as the central hub for all administrative functions of the university. Constructed in 1963, this iconic structure has been the nerve center of the university's operations for over six decades.</p>
+                <p>Housing the offices of the Vice-Chancellor, Registrar, Treasurer, and other key administrative departments, this building is where important decisions regarding the university's governance, academic policies, and development plans are made.</p>
+                <p>With Its distinctive architectural style blending modern and traditional elements, the Administration Building stands as a symbol of the university's commitment to excellence in higher education and its role as a leading institution in Bangladesh.</p>
+            </div>
+            
+            <div class="card">
+                <h3>Key Administrative Departments</h3>
+                <div class="department-list">
+                    <div class="news-item">
+                        <h4>Office of the Vice-Chancellor</h4>
+                        <p>The highest executive position in the university, responsible for overall administration and academic leadership.</p>
+                    </div>
+                    <div class="news-item">
+                        <h4>Registrar's Office</h4>
+                        <p>Manages student admissions, academic records, examinations, and faculty appointments.</p>
+                    </div>
+                    <div class="news-item">
+                        <h4>Treasurer's Office</h4>
+                        <p>Oversees the university's finances, budgeting, and financial planning.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <aside class="sidebar">
+            <div class="card">
+                <h3>Quick Links</h3>
+                <ul class="quick-links">
+                    <li><a href="#"><i class="fas fa-download"></i> Admission Forms</a></li>
+                    <li><a href="#"><i class="fas fa-calendar-alt"></i> Academic Calendar</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> Library Services</a></li>
+                    <li><a href="#"><i class="fas fa-building"></i> Campus Map</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Faculty Directory</a></li>
+                    <li><a href="#"><i class="fas fa-graduation-cap"></i> Alumni Portal</a></li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Latest News</h3>
+                <div class="news-item">
+                    <div class="news-date">June 22, 2025</div>
+                    <h4>New Research Grant Awarded</h4>
+                    <p>University Receives ৳ 2,44,736,400.00 Bangladeshi Taka grant for climate change research.</p>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">June 15, 2025</div>
+                    <h4>Summer Semester Registration</h4>
+                    <p>Registration for summer courses now open to all students.</p>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">June 10, 2025</div>
+                    <h4>International Conference</h4>
+                    <p>BU to host international conference on sustainable development.</p>
+                </div>
+            </div>
+        </aside>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Bangladesh University</h4>
+                <p>Bangladesh University is one of the largest and oldest public universities in Bangladesh. Established in 1953, it has played a vital role in the development of higher education in the country.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Important Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Academic Programs</a></li>
+                    <li><a href="#">Research Centers</a></li>
+                    <li><a href="#">Student Portal</a></li>
+                    <li><a href="#">Career Opportunities</a></li>
+                    <li><a href="#">Campus Facilities</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Information</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> <span>Bangladesh University,<br>Dhaka-1216, Bangladesh</span></li>
+                    <li><i class="fas fa-phone"></i> <span>+880 17784-55845</span></li>
+                    <li><i class="fas fa-envelope"></i> <span>info@bu.ac.bd</span></li>
+                    <li><i class="fas fa-globe"></i> <span>www.bu.ac.bd</span></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p> 2025 Bangladesh University.<br> All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

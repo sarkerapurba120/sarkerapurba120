@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business.com.bd - Buy Bus Tickets Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a3a6c, #2c5282);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        header {
+            background: #e74c3c;
+            color: white;
+            padding: 25px 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tagline {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            background: rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+        
+        .contact-info i {
+            margin-right: 8px;
+        }
+        
+        .routes {
+            background: #f8f9fa;
+            padding: 20px 40px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .routes h2 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .route-list {
+            display: flex;
+            gap: 30px;
+            font-size: 1.1rem;
+            color: #e74c3c;
+            font-weight: 600;
+        }
+        
+        .route-list span {
+            display: flex;
+            align-items: center;
+        }
+        
+        .route-list i {
+            margin: 0 10px;
+            color: #3498db;
+        }
+        
+        .ticket-section {
+            padding: 40px;
+        }
+        
+        .ticket-section h1 {
+            text-align: center;
+            color: #e74c3c;
+            font-size: 2.2rem;
+            margin-bottom: 35px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .booking-form {
+            background: #f1f2f6;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .form-group {
+            flex: 1;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+        
+        .form-group select, 
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-group select:focus, 
+        .form-group input:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+        
+        .search-btn {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 0;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .search-btn:hover {
+            background: #2ecc71;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .search-btn:active {
+            transform: translateY(0);
+        }
+        
+        .status {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #e74c3c;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 25px;
+            font-size: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .route-list {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            header, .routes, .ticket-section {
+                padding: 20px;
+            }
+            
+            .logo {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Business.com.bd</div>
+            <div class="tagline">Buy bus tickets online</div>
+            <div class="contact-info">
+                <i class="fas fa-phone"></i> Call: 16460 
+                <span style="margin: 0 10px">|</span> 
+                <i class="fas fa-envelope"></i> Email: support@bdtickets.com
+            </div>
+        </header>
+                  
+        
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="from">Leaving From:</label>
+                        <select id="from">
+                            <option value="">Select departure point</option>
+                            <option value="dhaka">Dhaka</option>
+                            <option value="cox">Cox's Bazar</option>
+                            <option value="bagha">Bagha</option>
+                            <option value="chittagong">Chittagong</option>
+                            <option value="sylhet">Sylhet</option>
+                        </select>
+                    </div>
+                </div>
+        <section class="routes">
+            <h2>Routes:</h2>
+            <div class="route-list">
+                <span>Cox's Bazar <i class="fas fa-arrow-right"></i> Dhaka</span>
+                <span>Dhaka <i class="fas fa-arrow-left"></i> Cox's Bazar</span>
+                <span>Dhaka <i class="fas fa-arrow-right"></i> Bagha</span>
+                <span>Bagha <i class="fas fa-arrow-left"></i> Dhaka</span>
+                <span>Dhaka <i class="fas fa-arrow-right"></i> Chittagong</span>
+                <span>Chittagong <i class="fas fa-arrow-left"></i> Dhaka</span>
+                <span>Dhaka <i class="fas fa-arrow-right"></i> Sylhet</span>
+                <span>Sylhet <i class="fas fa-arrow-left"></i> Dhaka</span>
+                <span>Cox's Bazar <i class="fas fa-arrow-right"></i> Chittagong</span>
+                <span>Chittagong <i class="fas fa-arrow-left"></i> Cox's Bazar</span>
+                <span>Bagha <i class="fas fa-arrow-right"></i> Sylhet</span>
+                <span>Sylhet <i class="fas fa-arrow-left"></i> Bagha</span>
+                <span>Chittagong <i class="fas fa-arrow-right"></i> Sylhet</span>
+                <span>Sylhet <i class="fas fa-arrow-left"></i> Chittagong</span>
+                <span>Bagha <i class="fas fa-arrow-right"></i> Cox's Bazar</span>
+
+            </div>
+        </section>
+        
+        <section class="ticket-section">
+            <h1>Buy Ticket</h1>
+            
+            <div class="booking-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="from">Leaving From:</label>
+                        <select id="from">
+                            <option value="">Select departure point</option>
+                            <option value="dhaka">Dhaka</option>
+                            <option value="cox">Cox's Bazar</option>
+                            <option value="bagha">Bagha</option>
+                            <option value="chittagong">Chittagong</option>
+                            <option value="sylhet">Sylhet</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="to">Going To:</label>
+                        <select id="to">
+                            <option value="">Select destination</option>
+                            <option value="dhaka">Dhaka</option>
+                            <option value="cox">Cox's Bazar</option>
+                            <option value="bagha">Bagha</option>
+                            <option value="chittagong">Chittagong</option>
+                            <option value="sylhet">Sylhet</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Departing On:</label>
+                        <input type="date" id="date" value="2025-06-23">
+                    </div>
+                </div>
+                
+                <button class="search-btn">Search</button>
+            </div>
+            
+            <div class="status">WEAK</div>
+        </section>
+        
+        <footer>
+            <p>2025 business.com.bd - All rights reserved.<br> Buy bus tickets online with confidence.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Set minimum date to today
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('date').min = today;
+        });
+    </script>
+</body>
+</html>

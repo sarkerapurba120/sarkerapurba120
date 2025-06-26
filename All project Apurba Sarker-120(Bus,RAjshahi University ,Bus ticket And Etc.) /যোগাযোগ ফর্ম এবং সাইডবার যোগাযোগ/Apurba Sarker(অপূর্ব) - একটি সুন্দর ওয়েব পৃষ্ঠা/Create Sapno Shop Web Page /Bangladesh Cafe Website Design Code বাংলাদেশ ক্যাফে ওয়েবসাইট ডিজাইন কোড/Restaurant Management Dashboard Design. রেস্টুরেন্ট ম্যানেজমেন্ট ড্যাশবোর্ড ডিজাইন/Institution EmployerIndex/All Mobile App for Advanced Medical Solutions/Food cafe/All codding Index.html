@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunshine Cafe - Fresh & Delicious</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f5f0;
+            color: #333;
+        }
+        
+        header {
+            background-color: #ff9a3c;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .cafe-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .menu-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .menu-category {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .menu-category h2 {
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px dashed #ff9a3c;
+        }
+        
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dotted #ddd;
+        }
+        
+        .menu-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .item-name {
+            font-weight: 500;
+        }
+        
+        .item-price {
+            color: #ff9a3c;
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #333;
+            color: white;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .cafe-image {
+                height: 300px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Bangladesh(Dhaka) Cafe</h1>
+        <p>Fresh ingredients, delicious flavors</p>
+    </header>
+    
+    <div class="container">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bangladesh(Dhaka) Cafe Interior" class="cafe-image">
+        
+        <div class="menu-section">
+            <div class="menu-category">
+                <h2>Breakfast</h2>
+                <div class="menu-item">
+                    <span class="item-name">Avocado Toast</span>
+                    <span class="item-price">৳150/-</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Pancake Stack</span>
+                    <span class="item-price">৳900/-</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Eggs Benedict</span>
+                    <span class="item-price">৳1050/-</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Greek Yogurt Parfait</span>
+                    <span class="item-price">৳700/-</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Breakfast Burrito</span>
+                    <span class="item-price">৳950/-</span>
+                </div>
+            </div>
+            
+            <div class="menu-category">
+                <h2>Lunch</h2>
+                <div class="menu-item">
+                    <span class="item-name">Quinoa Salad</span>
+                    <span class="item-price">৳1100/-</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Grilled Chicken Sandwich</span>
+                    <span class="item-price">৳1250/-</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Vegetable Panini</span>
+                    <span class="item-price">৳1000/-</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Beef Burger</span>
+                    <span class="item-price">৳1300/-</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Caesar Salad</span>
+                    <span class="item-price">৳950/-</span>
+                </div>
+            </div>
+            
+            <div class="menu-category">
+                <h2>Drinks</h2>
+                <div class="menu-item">
+                    <span class="item-name">Espresso</span>
+                    <span class="item-price">৳300/-</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Cappuccino</span>
+                    <span class="item-price">৳450/-</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Iced Latte</span>
+                    <span class="item-price">৳500/-</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Fresh Orange Juice</span>
+                    <span class="item-price">৳400/-</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Green Tea</span>
+                    <span class="item-price">৳350/-</span>
+                </div>
+            </div>
+            
+            <div class="menu-category">
+                <h2>Desserts</h2>
+                <div class="menu-item">
+                    <span class="item-name">Chocolate Cake</span>
+                    <span class="item-price">৳650/-</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Cheesecake</span>
+                    <span class="item-price">৳700/-</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Tiramisu</span>
+                    <span class="item-price">৳750/-</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Apple Pie</span>
+                    <span class="item-price">৳600/-</span>
+                </div>
+                <div class="menu-item">
+                    <span class="item-name">Ice Cream Sundae</span>
+                    <span class="item-price">৳550/-</span>
+                    <script>
+                    
+async function placeOrder(userId, restaurantId, items) {
+  // Validate user
+  const user = await User.findById(userId);
+  if (!user) throw new Error('User not found');
+  
+  // Create order
+  const order = new Order({
+    user: userId,
+    restaurant: restaurantId,
+    items: items,
+    status: 'pending',
+    createdAt: new Date()
+  });
+  
+  // Process payment
+  const paymentResult = await processPayment(user, order.total);
+  if (!paymentResult.success) {
+    order.status = 'payment_failed';
+    await order.save();
+    throw new Error('Payment failed');
+  }
+  
+  // Notify restaurant
+  await notifyRestaurant(restaurantId, order._id);
+  
+  return order;
+}
+                    </script>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 Bangladesh(Dhaka) Cafe. All rights reserved.</p>
+        <p>123 Main Road, Dhaka | (+880) 1797-921564 | Open 07am-10pm daily</p>
+    </footer>
+</body>
+</html>

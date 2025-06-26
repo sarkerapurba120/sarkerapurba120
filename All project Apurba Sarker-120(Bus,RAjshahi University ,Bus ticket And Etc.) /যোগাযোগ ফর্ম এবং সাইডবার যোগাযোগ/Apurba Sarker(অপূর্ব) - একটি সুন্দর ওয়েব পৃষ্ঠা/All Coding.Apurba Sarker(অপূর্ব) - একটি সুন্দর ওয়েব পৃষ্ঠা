@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apurba Sarker(অপূর্ব) - একটি সুন্দর ওয়েব পৃষ্ঠা</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            background-attachment: fixed;
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(0, 10, 46, 0.85);
+            color: #f9f9f9;
+            padding: 20px 0;
+            border-bottom: 3px solid #FFD700;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 2.2rem;
+            margin-left: 15px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: #FFD700;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: #f9f9f9;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: #FFD700;
+            color: #1a2a6c;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+            margin: 30px 0;
+            border-radius: 15px;
+            background: rgba(0, 15, 60, 0.6);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3') no-repeat center center/cover;
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #FFD700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #f0f0f0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #FFD700;
+            color: #1a2a6c;
+            padding: 12px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 15px 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            background: #ffc800;
+        }
+
+        /* Content Sections */
+        .section {
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-left: 5px solid #FFD700;
+        }
+
+        .section h3 {
+            color: #1a2a6c;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px dashed #FFD700;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .profile-img {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            max-width: 350px;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .profile-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item .caption {
+            padding: 15px;
+            background: #f9f9f9;
+        }
+
+        /* Achievements */
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .achievement-card {
+            background: linear-gradient(135deg, #1a2a6c, #2c3e8f);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .achievement-card i {
+            font-size: 3rem;
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+
+        .achievement-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Contact */
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #1a2a6c;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #1a2a6c;
+            box-shadow: 0 0 0 3px rgba(26, 42, 108, 0.2);
+            outline: none;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 10, 46, 0.95);
+            color: #f9f9f9;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+            border-top: 3px solid #FFD700;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #FFD700;
+        }
+
+        .footer-section p, .footer-section li {
+            margin-bottom: 10px;
+            color: #ddd;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #FFD700;
+            margin-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: #FFD700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: #FFD700;
+            color: #1a2a6c;
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .profile-img {
+                max-width: 100%;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 20px;
+                justify-content: center;
+            }
+            
+            .hero {
+                padding: 0px 20px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 10px 10px;
+            }
+        }
+            .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .logo-icon {
+        color: gold;
+        font-size: 10px;
+}
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo">
+                    <div class="premium-photo">
+                        <img src="data:image/jpeg;base64,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" alt="Apurba Sarker" style="width: 50px; height: 50px; border-radius: 50%;">
+                    </div>
+             
+              </div>
+                <h1>Apurba Sarker(অপূর্ব)</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">হোম</a></li>
+                    <li><a href="#about">আমার সম্পর্কে</a></li>
+                    <li><a href="#gallery">গ্যালারি</a></li>
+                    <li><a href="#achievements">সাফল্য</a></li>
+                    <li><a href="#contact">যোগাযোগ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Apurba Sarker-এর স্বাগতম</h2>
+            <p>একটি ব্যতিক্রমী ব্যক্তিত্ব যার কাজ ও অবদান অসংখ্য মানুষের জীবনকে স্পর্শ করেছে।</p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn">আমার সম্পর্কে জানুন</a>
+                <a href="#contact" class="btn">যোগাযোগ করুন</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h3>আমার সম্পর্কে</h3>
+            <div class="about-content">
+                <div class="profile-img">
+                    <img src="c:\Users\User\Pictures\Camera Roll\Black Gold Elegant Simple Monogram Initial Name Brand Logo.png" alt="Apurba Sarker">
+                </div>
+                <div class="about-text">
+                    <p>আমি Apurba Sarker, একজন নিবেদিত পেশাদার যার কাজ বিভিন্ন ক্ষেত্রে বিস্তৃত। আমার পেশাগত জীবন শুরু হয়েছিল সফ্টওয়্যার ইঞ্জিনিয়ার হিসেবে, যেখানে আমি বিভিন্ন প্রযুক্তিগত প্রকল্পে কাজ করেছি এবং উদ্ভাবনী সমাধান প্রদান করেছি।</p>
+                    <p>বর্তমানে আমি সামাজিক উদ্যোগের দিকে মনোনিবেশ করেছি, বিশেষ করে শিক্ষা ও ডিজিটাল সাক্ষরতা উন্নয়নে। আমার বিশ্বাস যে প্রযুক্তি ও শিক্ষার মাধ্যমে আমরা একটি উন্নত সমাজ গড়ে তুলতে পারি।</p>
+                    <p>আমার শখের মধ্যে রয়েছে ভ্রমণ, ফটোগ্রাফি, এবং বই পড়া। আমি বিশ্বাস করি যে ব্যক্তিগত বৃদ্ধি এবং সামাজিক অবদান জীবনের দুটি গুরুত্বপূর্ণ দিক।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section">
+            <h3>আমার কর্মজীবন</h3>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="c:\Users\User\Pictures\Camera Roll\e8a107ec-25d1-45ad-859d-bbe3c345b5aa.png" alt="Team Meeting">
+                    <div class="caption">
+                        <h4>দলগত কাজ</h4>
+                        <p>আমার দলের সাথে একটি গুরুত্বপূর্ণ প্রকল্পে কাজ করছি</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="c:\Users\User\Pictures\Camera Roll\684bdd44-36ee-4bd7-82b8-50479f45b015.png" alt="Conference">
+                    <div class="caption">
+                        <h4>সম্মেলনে বক্তৃতা</h4>
+                        <p>আন্তর্জাতিক প্রযুক্তি সম্মেলনে বক্তব্য রাখছি</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="c:\Users\User\Pictures\Camera Roll\4c67bdc3-de76-410e-82e3-7136e0cd8878.png" alt="Education">
+                    <div class="caption">
+                        <h4>শিক্ষা কার্যক্রম</h4>
+                        <p>তরুণ শিক্ষার্থীদের জন্য কর্মশালা পরিচালনা করছি</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Coding">
+                    <div class="caption">
+                        <h4>প্রোগ্রামিং</h4>
+                        <p>আমার প্রিয় প্রোগ্রামিং পরিবেশে কাজ করছি</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="section">
+            <h3>আমার সাফল্য</h3>
+            <div class="achievements">
+                <div class="achievement-card">
+                    <i class="fas fa-trophy"></i>
+                    <h4>সেরা উদ্ভাবক পুরস্কার</h4>
+                    <p>2025 সালে আমার উদ্ভাবনী সফ্টওয়্যার সমাধানের জন্য জাতীয় পুরস্কার প্রাপ্ত</p>
+                </div>
+                <div class="achievement-card">
+                    <i class="fas fa-book"></i>
+                    <h4>প্রকাশিত বই</h4>
+                    <p>প্রযুক্তি ও সমাজ নিয়ে দুটি বই প্রকাশিত হয়েছে, যা পাঠকদের দ্বারা প্রশংসিত</p>
+                </div>
+                <div class="achievement-card">
+                    <i class="fas fa-users"></i>
+                    <h4>সামাজিক কর্মকাণ্ড</h4>
+                    <p>10,000+ শিক্ষার্থীকে ডিজিটাল শিক্ষা প্রদানে সহায়তা করেছি</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h3>যোগাযোগ করুন</h3>
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">নাম</label>
+                    <input type="text" id="name" placeholder="আপনার নাম লিখুন">
+                </div>
+                <div class="form-group">
+                    <label for="email">ইমেইল</label>
+                    <input type="email" id="email" placeholder="আপনার ইমেইল ঠিকানা">
+                </div>
+                <div class="form-group">
+                    <label for="message">বার্তা</label>
+                    <textarea id="message" rows="5" placeholder="আপনার বার্তা লিখুন..."></textarea>
+                </div>
+                <button type="submit" class="btn">বার্তা পাঠান</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Apurba Sarker</h4>
+                    <p>একজন নিবেদিত পেশাদার ও সামাজিক উদ্যোক্তা, যিনি প্রযুক্তি ও শিক্ষার মাধ্যমে সমাজ উন্নয়নে কাজ করছেন।</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>লিংক</h4>
+                    <ul>
+                        <li><a href="#home">হোম</a></li>
+                        <li><a href="#about">আমার সম্পর্কে</a></li>
+                        <li><a href="#gallery">গ্যালারি</a></li>
+                        <li><a href="#achievements">সাফল্য</a></li>
+                        <li><a href="#contact">যোগাযোগ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>যোগাযোগের তথ্য</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> ঢাকা, বাংলাদেশ</p>
+                    <p><i class="fas fa-phone"></i> +880 1797-921564</p>
+                    <p><i class="fas fa-envelope"></i> sarkarapurbo75@gmail.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>২০২৫ Apurba Sarker(অপূর্ব সরকার).< সকল অধিকার সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section, .achievement-card, .gallery-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

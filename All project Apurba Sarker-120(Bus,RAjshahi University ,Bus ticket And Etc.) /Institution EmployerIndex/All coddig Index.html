@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangladesh(Dhaka) Cafe -Institution Employer Directory</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div id="login-section" class="login-container">
+            <h2>Bangladesh(Dhaka) Cafe-Employer Directory Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="token">Token Number:</label>
+                    <input type="text" id="token" name="token" required>
+                </div>
+                <button type="submit" class="btn">Access Directory</button>
+            </form>
+        </div>
+
+        <!-- Directory Section (initially hidden) -->
+        <div id="directory-section" class="directory-container" style="display: none;">
+            <div class="header">
+                <h2>Bangladesh(Dhaka) Cafe-Employer Directory</h2>
+                <div class="user-info">
+                    <span id="display-name"></span>
+                    <button id="logout-btn" class="btn logout">Logout</button>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search by name, title or department...">
+                <button id="search-btn" class="btn">Search</button>
+                <button id="reset-search" class="btn secondary">Reset</button>
+            </div>
+
+            <div class="actions">
+                <button id="contact-btn" class="btn">Contact Seat Back</button>
+            </div>
+
+            <div class="directory-table-container">
+                <table id="directory-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Title</th>
+                            <th>Department</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody id="directory-body">
+                        <!-- Employer data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Contact Modal (hidden by default) -->
+        <div id="contact-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Contact Seat Back</h3>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Your Email:</label>
+                        <input type="email" id="contact-email" name="contact-email" required>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2, h3 {
+    color: #2c3e50;
+}
+
+/* Login Section */
+.login-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.btn.secondary {
+    background-color: #95a5a6;
+}
+
+.btn.secondary:hover {
+    background-color: #7f8c8d;
+}
+
+.btn.logout {
+    background-color: #e74c3c;
+    margin-left: 15px;
+}
+
+.btn.logout:hover {
+    background-color: #c0392b;
+}
+
+/* Directory Section */
+.directory-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-container input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.actions {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+/* Table Styles */
+.directory-table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .search-container {
+        flex-direction: column;
+    }
+    
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .user-info {
+        margin-top: 15px;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+}
+</style>
+<script>
+// Sample employer data
+const employers = [
+    { name: "Ariful Islam", title: "Director", department: "Administration", phone: "01711-121212", email: "ariful.islam@institution.edu" },
+    { name: "Ali Osman", title: "HR Manager", department: "Human Resources", phone: "01711-121212", email: "ali.osman@institution.edu" },
+    { name: "Isalt Ali", title: "Finance Officer", department: "Finance", phone: "01711-121212", email: "isalt.ali@institution.edu" },
+    { name: "salman Ali", title: "Academic Dean", department: "Academics", phone: "01711-121212", email: "salman.ali@institution.edu" },
+    { name: "Raiman Islam", title: "IT Manager", department: "Information Technology", phone: "01711-121212", email: "raiman.islam@institution.edu" },
+    { name: "Aslam Ali", title: "Admissions Officer", department: "Admissions", phone: "01711-121212", email: "aslam.ali@institution.edu" },
+    { name: "Mahatab Ali", title: "Facilities Manager", department: "Operations", phone: "01711-121212", email: "mahatab.ali@institution.edu" },
+    { name: "Ali Islam", title: "Student Counselor", department: "Student Services", phone: "01711-121212", email: "ali.islam@institution.edu" }
+];
+
+// DOM Elements
+const loginSection = document.getElementById('login-section');
+const directorySection = document.getElementById('directory-section');
+const loginForm = document.getElementById('login-form');
+const logoutBtn = document.getElementById('logout-btn');
+const displayName = document.getElementById('display-name');
+const directoryBody = document.getElementById('directory-body');
+const searchInput = document.getElementById('search-input');
+const searchBtn = document.getElementById('search-btn');
+const resetSearch = document.getElementById('reset-search');
+const contactBtn = document.getElementById('contact-btn');
+const contactModal = document.getElementById('contact-modal');
+const closeModal = document.querySelector('.close');
+const contactForm = document.getElementById('contact-form');
+
+// Current user
+let currentUser = null;
+
+// Initialize the page
+function init() {
+    // Check if user is already logged in (from sessionStorage)
+    const savedUser = sessionStorage.getItem('directoryUser');
+    if (savedUser) {
+        currentUser = JSON.parse(savedUser);
+        showDirectory();
+    }
+    
+    // Populate employer table
+    renderEmployers(employers);
+    
+    // Set up event listeners
+    setupEventListeners();
+}
+
+// Set up event listeners
+function setupEventListeners() {
+    // Login form submission
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const token = document.getElementById('token').value;
+        
+        // Basic validation
+        if (name && phone && token) {
+            currentUser = { name, phone, token };
+            
+            // Save user to sessionStorage
+            sessionStorage.setItem('directoryUser', JSON.stringify(currentUser));
+            
+            // Show directory
+            showDirectory();
+        } else {
+            alert('Please fill in all fields');
+        }
+    });
+    
+    // Logout button
+    logoutBtn.addEventListener('click', function() {
+        // Clear user data
+        currentUser = null;
+        sessionStorage.removeItem('directoryUser');
+        
+        // Show login form
+        loginSection.style.display = 'block';
+        directorySection.style.display = 'none';
+        
+        // Reset form
+        loginForm.reset();
+    });
+    
+    // Search functionality
+    searchBtn.addEventListener('click', searchEmployers);
+    searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            searchEmployers();
+        }
+    });
+    
+    // Reset search
+    resetSearch.addEventListener('click', function() {
+        searchInput.value = '';
+        renderEmployers(employers);
+    });
+    
+    // Contact button
+    contactBtn.addEventListener('click', function() {
+        contactModal.style.display = 'block';
+    });
+    
+    // Close modal
+    closeModal.addEventListener('click', function() {
+        contactModal.style.display = 'none';
+    });
+    
+    // Contact form submission
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        const email = document.getElementById('contact-email').value;
+        
+        // In a real application, you would send this data to a server
+        console.log('Message to seat back:', { subject, message, email });
+        
+        // Show confirmation and close modal
+        alert('Your message has been sent to the seat back.');
+        contactModal.style.display = 'none';
+        contactForm.reset();
+    });
+    
+    // Close modal when clicking outside
+    window.addEventListener('click', function(event) {
+        if (event.target === contactModal) {
+            contactModal.style.display = 'none';
+        }
+    });
+}
+
+// Show directory section
+function showDirectory() {
+    loginSection.style.display = 'none';
+    directorySection.style.display = 'block';
+    
+    // Display user's name
+    displayName.textContent = `Welcome Bangladesh(Dhaka) Cafe, ${currentUser.name}`;
+}
+
+// Render employers to the table
+function renderEmployers(employersToRender) {
+    directoryBody.innerHTML = '';
+    
+    employersToRender.forEach(employer => {
+        const row = document.createElement('tr');
+        
+        row.innerHTML = `
+            <td>${employer.name}</td>
+            <td>${employer.title}</td>
+            <td>${employer.department}</td>
+            <td>${employer.phone}</td>
+            <td><a href="mailto:${employer.email}">${employer.email}</a></td>
+        `;
+        
+        directoryBody.appendChild(row);
+    });
+}
+
+// Search employers
+function searchEmployers() {
+    const searchTerm = searchInput.value.toLowerCase();
+    
+    if (!searchTerm) {
+        renderEmployers(employers);
+        return;
+    }
+    
+    const filteredEmployers = employers.filter(employer => 
+        employer.name.toLowerCase().includes(searchTerm) ||
+        employer.title.toLowerCase().includes(searchTerm) ||
+        employer.department.toLowerCase().includes(searchTerm) ||
+        employer.phone.includes(searchTerm) ||
+        employer.email.toLowerCase().includes(searchTerm)
+    );
+    
+    renderEmployers(filteredEmployers);
+}
+
+// Initialize the application when the DOM is loaded
+document.addEventListener('DOMContentLoaded', init);
+</script>   

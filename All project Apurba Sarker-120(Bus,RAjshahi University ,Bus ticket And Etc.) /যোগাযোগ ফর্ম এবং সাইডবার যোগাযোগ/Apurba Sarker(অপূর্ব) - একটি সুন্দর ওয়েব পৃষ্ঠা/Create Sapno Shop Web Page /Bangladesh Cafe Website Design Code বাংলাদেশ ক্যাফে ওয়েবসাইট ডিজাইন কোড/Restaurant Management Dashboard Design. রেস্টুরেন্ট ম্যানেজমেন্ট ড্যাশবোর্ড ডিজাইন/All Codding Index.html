@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangladesh(Dhaka) Cafe BD-Fresh & Delicious</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        a:focus {
+            outline: none;
+        }
+        a:focus-visible {
+            outline: 1px solid #3498db;
+            outline-offset: 1px;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: stretch;
+            width: 50%;
+            height: 50vh;
+        }
+        .container > * {
+            flex: 1;
+        }
+        .container > *:not(:last-child) {
+            margin-right: 10px;
+        }
+        .container > *:last-child {
+            margin-right: 0;
+        }
+        .container > *:not(:last-child) {
+            margin-bottom: 10px;
+        }
+        .container > *:last-child {
+            margin-bottom: 0;
+        }
+        .container > * {
+            background: #f5f7fa;
+            border-radius: 2px;
+            padding: 5px;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .container > *:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        .container > *:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        .container > *:focus {
+            outline: 1px solid #3498db;
+            outline-offset: 1px;
+        }
+        .container > *:focus-visible {
+            outline: 1px solid #3498db;
+            outline-offset: 1px;
+        }
+        /* General Styles */
+        
+
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            min-height: 30vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1000px;
+            width: 100%;
+            height: 90vh;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(to bottom, #2c3e50, #1a1a2e);
+            color: white;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            padding: 0 20px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 25px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffcc00;
+            letter-spacing: 1px;
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        .nav-menu {
+            flex: 1;
+        }
+
+        .nav-item {
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-item.active {
+            background: rgba(255, 255, 255, 0.15);
+            border-left: 4px solid #ffcc00;
+        }
+
+        .nav-item i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+            width: 24px;
+            text-align: center;
+        }
+
+        .nav-item span {
+            font-size: 1.05rem;
+        }
+
+        .divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 15px 25px;
+        }
+
+        .sidebar-footer {
+            padding: 15px 25px;
+            font-size: 0.85rem;
+            opacity: 0.7;
+            text-align: center;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: #f5f7fa;
+        }
+
+        .header {
+            background: white;
+            padding: 20px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            z-index: 10;
+        }
+
+        .header h2 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            background: #fff3d4;
+            padding: 10px 20px;
+            margin: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #ffcc00;
+        }
+
+        .highlight h3 {
+            font-size: 1.3rem;
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+
+        .highlight p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .email-actions {
+            display: flex;
+            gap: 10px;
+            padding: 10px 20px;
+            background: white;
+            border-bottom: 1px solid #eee;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+
+        .btn-secondary {
+            background: #ecf0f1;
+            color: #2c3e50;
+        }
+
+        .btn-secondary:hover {
+            background: #d5dbdb;
+        }
+
+        .email-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .email-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .email-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .email-card h4 {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .email-card h4 i {
+            color: #3498db;
+        }
+
+        .email-card p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .email-card .meta {
+            display: flex;
+            justify-content: space-between;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 2px 5px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .tag-important {
+            background: #ffeaa7;
+            color: #d35400;
+        }
+
+        .tag-new {
+            background: #d6eaf8;
+            color: #2980b9;
+        }
+
+        .tag-promotion {
+            background: #d5f5e3;
+            color: #27ae60;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .sidebar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <div class="sidebar">
+            <div class="logo">
+                <h1>Bangladesh(Dhaka) Cafe BD-Fresh & Delicious</h1>
+                <p>Fresh Ingredients, Delicious Flavors</p>
+            </div>
+            
+            <div class="nav-menu">
+                <div class="nav-item active">
+                    <i class="fas fa-inbox"></i>
+                    <span>Inbox</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-star"></i>
+                    <span>Starred</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Snoozed</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span>Important</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-comments"></i>
+                    <span>Chats</span>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="nav-item">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Sent</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Scheduled</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Drafts</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>All Mail</span>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="nav-item">
+                    <i class="fas fa-ban"></i>
+                    <span>Spam</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-trash-alt"></i>
+                    <span>Trash</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-tag"></i>
+                    <span>Categories</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-ellipsis-h"></i>
+                    <span>More</span>
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                Restaurant Management System v2.1
+            </div>
+        </div>
+        
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="header">
+                <h2>Bangladesh(Dhaka) Cafe BD-Fresh & Delicious</h2>
+                <p>Fresh Ingredients, Delicious Flavors</p>
+            </div>
+            
+            <div class="highlight">
+                <h3>Bangladesh(Dhaka) Cafe BD-Fresh & Delicious</h3>
+                <p>Fresh Ingredients, Delicious Flavors</p>
+            </div>
+            
+            <div class="email-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Compose E-mail
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-redo"></i> Refresh
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-filter"></i> Filter
+                </button>
+            </div>
+            
+            <div class="email-content">
+                <div class="email-card">
+                    <h4><i class="fas fa-utensils"></i> Bangladesh(Dhaka) Cafe BD-Fresh & Delicious</h4>
+                    <p>Bangladesh(Dhaka) Cafe is dedicated to providing an authentic dining experience, showcasing the vibrant flavors and culinary traditions of Bangladesh. <br><br> Join us for a memorable meal!</p>
+                    <div class="meta">
+                        <span><i class="far fa-clock"></i> Today 09:30</span>
+                        <span class="tag tag-important">Important</span>
+                    </div>
+                </div>
+                
+                <div class="email-card">
+                    <h4><i class="fas fa-coffee"></i> Bangladesh(Dhaka) Cafe BD-Fresh & Delicious</h4>
+                    <p>Bangladesh(Dhaka) Cafe is dedicated to providing an authentic dining experience, showcasing the vibrant flavors and culinary traditions of Bangladesh. <br><br> Join us for a memorable meal!</p>
+                    <div class="meta">
+                        <span><i class="far fa-clock"></i> Yesterday 15:45</span>
+                        <span class="tag tag-new">New</span>
+                    </div>
+                </div>
+                
+                <div class="email-card">
+                    <h4><i class="fas fa-star"></i> Bangladesh(Dhaka) Cafe BD-Fresh & Delicious</h4>
+                    <p>Bangladesh(Dhaka) Cafe is dedicated to providing an authentic dining experience, showcasing the vibrant flavors and culinary traditions of Bangladesh. <br><br> Join us for a memorable meal!</p>
+                    <div class="meta">
+                        <span><i class="far fa-clock"></i> Yesterday 11:20</span>
+                        <span class="tag tag-promotion">Good Reviews</span>
+                    </div>
+                </div>
+                
+                <div class="email-card">
+                    <h4><i class="fas fa-tools"></i> Bangladesh(Dhaka) Cafe BD-Fresh & Delicious</h4>
+                    <p>Bangladesh(Dhaka) Cafe is dedicated to providing an authentic dining experience, showcasing the vibrant flavors and culinary traditions of Bangladesh. <br><br> Join us for a memorable meal!</p>
+                    <div class="meta">
+                        <span><i class="far fa-clock"></i> 2025 Connect With Us.</span>
+                    </div>
+                </div>
+            </div>
+             <div class="info-box">
+                <h3>Bangladesh(Dhaka) Cafe</h3>
+                <p>Bangladesh(Dhaka) Cafe BD-Fresh & Delicious.</p>
+            </div>
+            
+            <a href="https://www.iana.org/domains/reserved" class="more-info">
+                More information...
+            </a>
+    <style>
+            .info-box {
+            background-color: #f8f9fa;
+            border-radius: 2px;
+            padding: 2px;
+            margin: 2px 0;
+            border-left: 2px solid #3498db;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .info-box h3 {
+            color: #2c3e50;
+            margin-bottom: 2px;
+        }
+        
+        .info-box p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 0;
+        }
+        
+        .more-info {
+            display: inline-block;
+            background: linear-gradient(45deg, #3498db, #2c3e50);
+            color: white;
+            text-decoration: none;
+            padding: 10px 10px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .more-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .more-info:active {
+            transform: translateY(0);
+        }
+        
+        .more-info::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 50%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.3), transparent);
+            transform: translateX(-50%);
+            transition: transform 0.5s ease;
+        }
+        .more-info:hover::after {
+            width: 100%;
+            height: 100%;
+            transform: translateX(0);
+        }
+        .more-info:hover::after {
+            transform: translateX(10%);
+        }
+    </style>
+            
+            <div class="footer">
+                <p>Bangladesh(Dhaka) Cafe BD-Fresh & Delicious </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add active class to clicked nav items
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.nav-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        // Add hover effect to email cards
+        document.querySelectorAll('.email-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.1)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.05)';
+            });
+        });
+    </script>
+</body>
+</html>

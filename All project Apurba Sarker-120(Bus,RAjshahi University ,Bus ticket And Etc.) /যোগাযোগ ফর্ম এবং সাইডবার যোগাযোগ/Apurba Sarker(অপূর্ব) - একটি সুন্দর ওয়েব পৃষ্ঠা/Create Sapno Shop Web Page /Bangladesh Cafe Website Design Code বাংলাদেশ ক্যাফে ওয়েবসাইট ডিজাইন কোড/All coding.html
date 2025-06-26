@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BD-Fresh & Delicious - Authentic Bangladeshi Cuisine</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #e74c3c;
+            --secondary: #27ae60;
+            --accent: #f39c12;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --text: #34495e;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+            color: var(--accent);
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .slogan {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            border: 2px solid var(--primary);
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--dark);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-small {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .logo-small span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Menu Section */
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin: 60px 0 30px;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .menu-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .menu-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .menu-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-item:hover .menu-img img {
+            transform: scale(1.1);
+        }
+
+        .menu-content {
+            padding: 20px;
+        }
+
+        .menu-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .menu-price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .menu-desc {
+            color: #777;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light);
+            padding: 80px 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .contact-info {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--light);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1 class="logo fade-in">BD-Fresh & Delicious</h1>
+            <div class="tagline fade-in">Fresh Ingredients, Delicious Flavors</div>
+            <p class="slogan fade-in">Showcasing the vibrant flavors and culinary traditions of Bangladesh. Join us for a memorable meal!</p>
+            <a href="#reservation" class="cta-button fade-in">Book a Table</a>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo-small">BD-<span>Fresh</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#reservation">Reservation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Menu Section -->
+    <section id="menu" class="container">
+        <h2 class="section-title">Our Specialties</h2>
+        <div class="menu-grid">
+            <div class="menu-item fade-in">
+                <div class="menu-img">
+                    <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Biriyani">
+                </div>
+                <div class="menu-content">
+                    <h3 class="menu-title">Dhaka Biriyani</h3>
+                    <div class="menu-price">৳ BD 450</div>
+                    <p class="menu-desc">Fragrant basmati rice cooked with tender mutton, aromatic spices, and boiled eggs.</p>
+                </div>
+            </div>
+
+            <div class="menu-item fade-in">
+                <div class="menu-img">
+                    <img src="https://www.scratchingcanvas.com/wp-content/uploads/2018/08/Ilish-Bhaape.4.jpg">
+                </div>
+                <div class="menu-content">
+                    <h3 class="menu-title">Ilish Bhapa</h3>
+                    <div class="menu-price">৳ BD 650</div>
+                    <p class="menu-desc">Hilsa fish steamed in mustard paste, green chilies, and coconut.</p>
+                </div>
+            </div>
+
+            <div class="menu-item fade-in">
+                <div class="menu-img">
+                    <img src="https://images.unsplash.com/photo-1603893662172-99ed0cea2a08?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Beef Tehari">
+                </div>
+                <div class="menu-content">
+                    <h3 class="menu-title">Beef Tehari</h3>
+                    <div class="menu-price">৳ BD 380</div>
+                    <p class="menu-desc">Spiced rice dish cooked with tender beef, potatoes, and aromatic spices.</p>
+                </div>
+            </div>
+
+            <div class="menu-item fade-in">
+                <div class="menu-img">
+                    <img src="data:image/webp;base64,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" alt="Fuchka">
+                </div>
+                <div class="menu-content">
+                    <h3 class="menu-title">Fuchka</h3>
+                    <div class="menu-price">৳ BD 120</div>
+                    <p class="menu-desc">Crispy hollow puris filled with spicy mashed potatoes and tangy tamarind water.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h2>Our Story</h2>
+                    <p>Bangladesh(Dhaka) Cafe BD-Fresh & Delicious brings the authentic taste of Bangladeshi cuisine to the heart of Dhaka. Our chefs use traditional recipes passed down through generations, combined with the freshest local ingredients.</p>
+                    <p>Established in 2010, we've been serving our community with pride and passion. Our mission is to showcase the vibrant flavors and culinary traditions of Bangladesh while creating memorable dining experiences.</p>
+                    <p>Every dish tells a story of our rich cultural heritage, from the fragrant biriyanis to the delicate sweets. We take pride in our commitment to quality, authenticity, and exceptional service.</p>
+                </div>
+                <div class="about-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Cafe Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Connect With Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Our Location</h3>
+                    <p>+s123 Gulshan Avenue, Dhaka-1212, Bangladesh</p>
+                </div>
+
+                <div class="contact-info fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p>+880 1797-921564</p>
+                    <p>+880 29123456</p>
+                </div>
+
+                <div class="contact-info fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>E-mail</h3>
+                    <p>info@bdfreshdelicious.com</p>
+                    <p>reservations@bdfreshdelicious.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">BD-<span>Fresh</span></div>
+                    <p>Bringing authentic Bangladeshi flavors to Dhaka since 2025. <br>Fresh ingredients, traditional recipes, and unforgettable dining experiences.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-hours">
+                    <h3 class="footer-title">Opening Hours</h3>
+                    <ul class="footer-links">
+                        <li>Monday - Friday: 11:00 AM - 10:00 PM</li>
+                        <li>Saturday: 10:00 AM - 11:00 PM</li>
+                        <li>Sunday: 10:00 AM - 10:00 PM</li>
+                        <li>Holidays: 12:00 PM - 9:00 PM</li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Our Menu</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#reservation">Reservation</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>2025 Bangladesh(Dhaka) Cafe BD-Fresh & Delicious.<br> All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            fadeElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
+
+<button id="bookTableBtn">Book a Table</button>
+<script>
+  document.getElementById("bookTableBtn").addEventListener("click", function() {
+    window.open("reservation.html", "_blank");
+  });
+</script>
